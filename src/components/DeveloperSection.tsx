@@ -13,19 +13,27 @@ pnpm dev:api`;
 
 const sdkExample = `import { AgentFS } from '@agentfs/sdk';
 
-const fs = new AgentFS({ apiKey: process.env.AGENTFS_KEY });
-
-// Write with TTL
-await fs.put('/user/123/prefs/tone', { tone: 'direct' }, { 
-  ttl: '30d',
-  searchable: true 
+const fs = new AgentFS({ 
+  apiKey: process.env.AGENTFS_KEY 
 });
 
+// Write with TTL
+await fs.put(
+  '/user/123/prefs/tone', 
+  { tone: 'direct' }, 
+  { ttl: '30d', searchable: true }
+);
+
 // Read deterministically
-const prefs = await fs.get('/user/123/prefs/tone');
+const prefs = await fs.get(
+  '/user/123/prefs/tone'
+);
 
 // Search indexed entries
-const results = await fs.search('user preferences', { limit: 5 });`;
+const results = await fs.search(
+  'user preferences', 
+  { limit: 5 }
+);`;
 
 const DeveloperSection = () => {
   return (
@@ -93,8 +101,8 @@ const DeveloperSection = () => {
                 </div>
                 <span className="text-xs font-mono text-foreground-muted ml-2">index.ts</span>
               </div>
-              <pre className="p-4 overflow-x-auto max-w-full">
-                <code className="text-xs sm:text-sm font-mono text-foreground-muted whitespace-pre break-all sm:break-normal">
+              <pre className="p-3 sm:p-4 overflow-hidden">
+                <code className="text-[10px] sm:text-xs md:text-sm font-mono text-foreground-muted whitespace-pre-wrap break-words">
                   {sdkExample}
                 </code>
               </pre>

@@ -21,8 +21,8 @@ const Tokenomics = () => {
   };
 
   return (
-    <section id="tokenomics" className="py-24 relative">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="tokenomics" className="py-16 md:py-20 relative bg-background-panel/30">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,7 +34,7 @@ const Tokenomics = () => {
           <span className="inline-block px-3 py-1 text-xs font-mono border border-primary/30 rounded-full text-primary mb-4">
             TOKENOMICS
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             Token <span className="text-primary">Details</span>
           </h2>
           <p className="text-foreground-muted max-w-lg mx-auto">
@@ -43,7 +43,7 @@ const Tokenomics = () => {
         </motion.div>
 
         {/* Token Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-4xl mx-auto mb-6 md:mb-8">
           {tokenData.map((item, index) => (
             <motion.div
               key={item.label}
@@ -53,22 +53,22 @@ const Tokenomics = () => {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="p-6 rounded-xl border border-border bg-background-panel hover:border-primary/50 transition-all duration-300">
+              <div className="p-4 md:p-6 rounded-xl border border-border bg-background-panel hover:border-primary/50 transition-all duration-300">
                 {/* Terminal corner accent */}
                 <div className="absolute top-2 left-2 w-2 h-2 border-l border-t border-primary/50" />
                 <div className="absolute top-2 right-2 w-2 h-2 border-r border-t border-primary/50" />
                 <div className="absolute bottom-2 left-2 w-2 h-2 border-l border-b border-primary/50" />
                 <div className="absolute bottom-2 right-2 w-2 h-2 border-r border-b border-primary/50" />
 
-                <div className="flex flex-col items-center text-center gap-3">
-                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                    <item.icon className="w-5 h-5" />
+                <div className="flex flex-col items-center text-center gap-2 md:gap-3">
+                  <div className="p-1.5 md:p-2 rounded-lg bg-primary/10 text-primary">
+                    <item.icon className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
                   <div>
                     <p className="text-xs font-mono text-foreground-muted uppercase tracking-wider mb-1">
                       {item.label}
                     </p>
-                    <p className="text-lg font-semibold text-foreground">
+                    <p className="text-base md:text-lg font-semibold text-foreground">
                       {item.value}
                     </p>
                   </div>

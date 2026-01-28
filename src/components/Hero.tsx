@@ -21,11 +21,11 @@ const valueProofs = [
 
 const Hero = () => {
   return (
-    <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+    <section className="relative pt-20 pb-12 md:pt-28 md:pb-20 overflow-hidden">
       {/* Scanline effect for hero only */}
       <div className="absolute inset-0 bg-scanlines opacity-30 pointer-events-none" />
       
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* MVP Badge */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -39,24 +39,24 @@ const Hero = () => {
           </span>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left column - Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-4 md:mb-6">
               Memory that agents can{" "}
               <span className="text-primary">actually trust.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-foreground-muted mb-8 max-w-xl">
+            <p className="text-base md:text-lg lg:text-xl text-foreground-muted mb-6 md:mb-8 max-w-xl">
               Filesystem semantics, version history, TTL, and opt-in semantic search — Postgres-first.
             </p>
 
             {/* Value proofs */}
-            <div className="space-y-3 mb-8">
+            <div className="space-y-2 md:space-y-3 mb-6 md:mb-8">
               {valueProofs.map((proof, index) => (
                 <motion.div
                   key={index}
@@ -72,17 +72,17 @@ const Hero = () => {
             </div>
 
             {/* CTA buttons */}
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 md:mb-6">
               <Button 
                 size="lg" 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 glow-primary font-semibold px-8"
+                className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 glow-primary font-semibold px-8"
               >
                 Get started
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-border-bright hover:bg-muted hover:border-primary/50 transition-all duration-300"
+                className="w-full sm:w-auto border-border-bright hover:bg-muted hover:border-primary/50 transition-all duration-300"
               >
                 Read docs
               </Button>

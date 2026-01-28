@@ -41,8 +41,8 @@ const links = [
 
 const LinksSection = () => {
   return (
-    <section id="links" className="py-24 relative">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="links" className="py-16 md:py-20 relative">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ const LinksSection = () => {
           <span className="inline-block px-3 py-1 text-xs font-mono border border-primary/30 rounded-full text-primary mb-4">
             CONNECT
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             Join the <span className="text-primary">Community</span>
           </h2>
           <p className="text-foreground-muted max-w-lg mx-auto">
@@ -63,7 +63,7 @@ const LinksSection = () => {
         </motion.div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 max-w-4xl mx-auto">
           {links.map((link, index) => (
             <motion.a
               key={link.name}
@@ -74,7 +74,7 @@ const LinksSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className={`group relative p-6 rounded-xl border border-border bg-background-panel transition-all duration-300 ${link.color}`}
+              className={`group relative p-4 md:p-6 rounded-xl border border-border bg-background-panel transition-all duration-300 ${link.color}`}
             >
               {/* Terminal corner accent */}
               <div className="absolute top-2 left-2 w-2 h-2 border-l border-t border-primary/30 group-hover:border-current transition-colors" />
@@ -82,9 +82,9 @@ const LinksSection = () => {
               <div className="absolute bottom-2 left-2 w-2 h-2 border-l border-b border-primary/30 group-hover:border-current transition-colors" />
               <div className="absolute bottom-2 right-2 w-2 h-2 border-r border-b border-primary/30 group-hover:border-current transition-colors" />
 
-              <div className="flex flex-col items-center text-center gap-4">
-                <div className="p-3 rounded-lg bg-muted text-foreground-muted group-hover:bg-current/10 transition-all">
-                  <link.icon className="w-6 h-6" />
+              <div className="flex flex-col items-center text-center gap-3 md:gap-4">
+                <div className="p-2 md:p-3 rounded-lg bg-muted text-foreground-muted group-hover:bg-current/10 transition-all">
+                  <link.icon className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div>
                   <div className="flex items-center justify-center gap-1.5 mb-1">

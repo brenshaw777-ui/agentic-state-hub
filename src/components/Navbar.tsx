@@ -21,7 +21,11 @@ const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <img src={agentfsIcon} alt="AgentFS" className="h-8 w-8" />
+            <img 
+              src={agentfsIcon} 
+              alt="AgentFS" 
+              className="h-8 w-8 transition-all duration-300 hover:drop-shadow-[0_0_12px_hsl(43,100%,50%,0.7)]" 
+            />
           </a>
 
           {/* Desktop Navigation */}

@@ -7,6 +7,8 @@ import UseCaseTabs from "@/components/UseCaseTabs";
 import HowItWorks from "@/components/HowItWorks";
 import DeveloperSection from "@/components/DeveloperSection";
 import RoadmapTimeline from "@/components/RoadmapTimeline";
+import Tokenomics from "@/components/Tokenomics";
+import LinksSection from "@/components/LinksSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -22,6 +24,8 @@ const Index = () => {
         <HowItWorks />
         <DeveloperSection />
         <RoadmapTimeline />
+        <Tokenomics />
+        <LinksSection />
       </main>
       <Footer />
     </div>

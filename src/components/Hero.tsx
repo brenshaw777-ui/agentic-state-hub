@@ -34,7 +34,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-4 md:mb-6">
-              A developer-first SDK for{" "}
+              Developer first SDK for{" "}
               <span className="text-primary">agent memory.</span>
             </h1>
             

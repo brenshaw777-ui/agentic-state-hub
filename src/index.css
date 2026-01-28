@@ -8,10 +8,10 @@
 
 @layer base {
   :root {
-    /* Core backgrounds */
-    --background: 220 50% 4%;
-    --background-panel: 222 50% 6%;
-    --background-panel-alt: 224 50% 9%;
+    /* Core backgrounds - warmed up for amber theme */
+    --background: 30 20% 4%;
+    --background-panel: 30 15% 8%;
+    --background-panel-alt: 30 12% 12%;
     
     --foreground: 220 20% 93%;
     --foreground-muted: 222 20% 67%;

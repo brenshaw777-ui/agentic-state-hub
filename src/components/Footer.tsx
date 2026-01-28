@@ -16,10 +16,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="sm:col-span-2">
             <div className="flex items-center gap-2">
-              <div className="p-2 rounded-lg bg-foreground/90">
+              <div className="p-2 rounded-sm border border-foreground">
                 <img src={agentfsLogo} alt="AgentFS" className="h-7 w-7" />
               </div>
-              <span className="font-mono text-lg font-bold text-primary">AgentFS</span>
+              <span className="font-mono text-lg font-bold text-foreground">AgentFS</span>
             </div>
             <p className="mt-3 text-sm text-foreground-muted max-w-sm">
               Multi-tenant, filesystem-like memory store for AI agents. 
@@ -29,20 +29,20 @@ const Footer = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Resources</h4>
+            <h4 className="font-semibold mb-4 text-sm text-foreground">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#docs" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                <a href="#docs" className="text-sm text-foreground-muted hover:text-foreground transition-colors accent-underline">
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                <a href="#" className="text-sm text-foreground-muted hover:text-foreground transition-colors accent-underline">
                   API Reference
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-foreground-muted hover:text-foreground transition-colors">
+                <a href="#" className="text-sm text-foreground-muted hover:text-foreground transition-colors accent-underline">
                   GitHub
                 </a>
               </li>
@@ -51,17 +51,17 @@ const Footer = () => {
 
           {/* Social */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm">Connect</h4>
+            <h4 className="font-semibold mb-4 text-sm text-foreground">Connect</h4>
             <div className="flex gap-4">
               <a
                 href="#"
-                className="p-2 text-foreground-muted hover:text-foreground hover:bg-muted rounded-lg transition-all"
+                className="p-2 text-foreground-muted hover:text-foreground border border-border hover:border-foreground rounded-sm transition-all"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="p-2 text-foreground-muted hover:text-foreground hover:bg-muted rounded-lg transition-all"
+                className="p-2 text-foreground-muted hover:text-foreground border border-border hover:border-foreground rounded-sm transition-all"
               >
                 <XLogo className="w-5 h-5" />
               </a>
@@ -74,10 +74,10 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-border flex flex-col md:flex-row justify-between gap-3 md:gap-4">
-          <p className="text-xs text-foreground-muted/70">
+          <p className="text-xs text-foreground-muted">
             © 2024 AgentFS. All rights reserved.
           </p>
-          <p className="text-xs text-foreground-muted/70 font-mono">
+          <p className="text-xs text-foreground-muted font-mono">
             AgentFS is MVP-first. Search is opt-in. Quotas protect costs.
           </p>
         </div>

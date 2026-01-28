@@ -39,7 +39,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
             How AgentFS works <span className="text-foreground-muted text-xl sm:text-2xl md:text-3xl">(in 60 seconds)</span>
           </h2>
         </motion.div>
@@ -52,18 +52,19 @@ const HowItWorks = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative p-4 md:p-6 bg-background-panel border border-border rounded-lg"
+              className="relative p-4 md:p-6 bg-background border border-border rounded-sm card-accent-bar"
             >
               {/* Connector line */}
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-border" />
               )}
               
-              <span className="text-xs font-mono text-primary mb-2 md:mb-3 block">
+              {/* Step number in red circle */}
+              <div className="step-number mb-3 md:mb-4">
                 {step.number}
-              </span>
-              <step.icon className="w-6 h-6 md:w-8 md:h-8 text-foreground-muted mb-3 md:mb-4" />
-              <h3 className="text-base md:text-lg font-semibold mb-2">{step.title}</h3>
+              </div>
+              <step.icon className="w-6 h-6 md:w-8 md:h-8 text-foreground mb-3 md:mb-4" strokeWidth={1.5} />
+              <h3 className="text-base md:text-lg font-semibold mb-2 text-foreground">{step.title}</h3>
               <p className="text-sm text-foreground-muted">{step.description}</p>
             </motion.div>
           ))}
@@ -75,17 +76,17 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-8 md:mt-12 p-4 md:p-6 bg-background-panel/50 border border-border rounded-lg"
+          className="mt-8 md:mt-12 p-4 md:p-6 bg-background border border-border rounded-sm"
         >
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm font-mono text-foreground-muted">
-            <span className="px-3 py-1 border border-border rounded">Agent</span>
-            <span className="text-primary">→ put()</span>
-            <span className="px-3 py-1 border border-primary/30 bg-primary/5 rounded text-primary">AgentFS</span>
-            <span className="text-secondary">→ get()</span>
-            <span className="px-3 py-1 border border-border rounded">Agent</span>
-            <span className="mx-2 text-foreground-muted/50">|</span>
-            <span className="text-accent">search()</span>
-            <span className="text-foreground-muted/50">(opt-in)</span>
+            <span className="px-3 py-1 border border-foreground rounded-sm text-foreground">Agent</span>
+            <span className="text-primary font-bold">→ put()</span>
+            <span className="px-3 py-1 border border-primary bg-background rounded-sm text-primary">AgentFS</span>
+            <span className="text-secondary font-bold">→ get()</span>
+            <span className="px-3 py-1 border border-foreground rounded-sm text-foreground">Agent</span>
+            <span className="mx-2 text-foreground-muted">|</span>
+            <span className="text-primary font-bold">search()</span>
+            <span className="text-foreground-muted">(opt-in)</span>
           </div>
         </motion.div>
       </div>

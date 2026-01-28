@@ -72,17 +72,14 @@ const HeroTerminal = () => {
 
   return (
     <div className="relative">
-      {/* Scanline overlay */}
-      <div className="absolute inset-0 bg-scanlines pointer-events-none rounded-lg opacity-50" />
-      
-      {/* Terminal frame */}
-      <div className="relative bg-background-panel border border-border rounded-lg overflow-hidden terminal-glow">
+      {/* Terminal frame - light version */}
+      <div className="relative bg-background border border-foreground rounded-sm overflow-hidden">
         {/* Title bar */}
-        <div className="flex items-center gap-2 px-4 py-3 bg-background-panel-alt border-b border-border">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-foreground">
           <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-destructive/80" />
-            <div className="w-3 h-3 rounded-full bg-warning/80" />
-            <div className="w-3 h-3 rounded-full bg-primary/80" />
+            <div className="w-3 h-3 rounded-full bg-foreground" />
+            <div className="w-3 h-3 rounded-full bg-foreground" />
+            <div className="w-3 h-3 rounded-full bg-foreground" />
           </div>
           <span className="text-xs font-mono text-foreground-muted ml-2">agentfs-terminal</span>
         </div>
@@ -91,11 +88,11 @@ const HeroTerminal = () => {
         <div className="p-4 md:p-6 font-mono text-sm min-h-[200px]">
           {/* Prompt line */}
           <div className="flex flex-wrap items-start gap-1">
-            <span className="text-primary shrink-0">agentfs&gt;</span>
+            <span className="text-primary font-semibold shrink-0">agentfs&gt;</span>
             <span className="text-foreground break-all">
               {displayedCommand}
               {isTyping && (
-                <span className="inline-block w-2 h-4 bg-primary ml-0.5 cursor-blink" />
+                <span className="inline-block w-2 h-4 bg-foreground ml-0.5 cursor-blink" />
               )}
             </span>
           </div>
@@ -117,9 +114,6 @@ const HeroTerminal = () => {
           )}
         </div>
       </div>
-
-      {/* Glow effect behind */}
-      <div className="absolute -inset-1 bg-primary/10 blur-2xl -z-10 rounded-lg" />
     </div>
   );
 };

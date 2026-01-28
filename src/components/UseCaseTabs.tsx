@@ -89,7 +89,7 @@ const UseCaseTabs = () => {
   const activeCase = useCases.find((uc) => uc.id === activeTab)!;
 
   return (
-    <section id="use-cases" className="py-8 md:py-12 bg-background-panel/30">
+    <section id="use-cases" className="py-8 md:py-12 border-y border-border">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -98,7 +98,7 @@ const UseCaseTabs = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Built for bots and agent systems.
           </h2>
           <p className="text-foreground-muted">
@@ -112,13 +112,16 @@ const UseCaseTabs = () => {
             <button
               key={uc.id}
               onClick={() => setActiveTab(uc.id)}
-              className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 ${
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-sm transition-all duration-200 relative ${
                 activeTab === uc.id
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-background-panel border border-border text-foreground-muted hover:border-border-bright hover:text-foreground"
+                  ? "bg-foreground text-background"
+                  : "bg-background border border-border text-foreground-muted hover:border-foreground hover:text-foreground"
               }`}
             >
               {uc.label}
+              {activeTab === uc.id && (
+                <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-primary" />
+              )}
             </button>
           ))}
         </div>

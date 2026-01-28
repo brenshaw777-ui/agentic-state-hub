@@ -34,8 +34,8 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-4 md:mb-6">
-              Memory that agents can{" "}
-              <span className="text-primary">actually trust.</span>
+              A developer-first SDK for{" "}
+              <span className="text-primary">agent memory.</span>
             </h1>
             
             <p className="text-base md:text-lg lg:text-xl text-foreground-muted mb-6 md:mb-8 max-w-xl">

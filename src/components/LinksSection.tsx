@@ -54,7 +54,7 @@ const LinksSection = () => {
           <span className="inline-block px-3 py-1 text-xs font-mono border border-primary/30 rounded-full text-primary mb-4">
             CONNECT
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Join the <span className="text-primary">Community</span>
           </h2>
           <p className="text-foreground-muted max-w-lg mx-auto">

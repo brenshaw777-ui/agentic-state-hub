@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
-import { Send, Github, BookOpen, Twitter, ExternalLink } from "lucide-react";
+import { Send, Github, BookOpen, ExternalLink } from "lucide-react";
+
+// Official X logo component
+const XLogo = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 const links = [
   {
@@ -25,7 +32,7 @@ const links = [
   },
   {
     name: "X",
-    icon: Twitter,
+    icon: XLogo,
     href: "#",
     description: "Follow for updates",
     color: "hover:border-foreground hover:text-foreground",

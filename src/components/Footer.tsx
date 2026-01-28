@@ -9,7 +9,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
-              <img src={agentfsLogo} alt="AgentFS" className="h-10 w-10" />
+              <div className="p-2 rounded-lg bg-foreground/90">
+                <img src={agentfsLogo} alt="AgentFS" className="h-7 w-7" />
+              </div>
               <span className="font-mono text-lg font-bold text-primary">AgentFS</span>
             </div>
             <p className="mt-3 text-sm text-foreground-muted max-w-sm">

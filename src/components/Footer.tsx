@@ -1,4 +1,5 @@
 import { Github, Twitter } from "lucide-react";
+import agentfsLogo from "@/assets/agentfs-logo.png";
 
 const Footer = () => {
   return (
@@ -7,7 +8,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <span className="font-mono text-lg font-bold text-primary">AgentFS</span>
+            <div className="flex items-center gap-2">
+              <img src={agentfsLogo} alt="AgentFS" className="h-10 w-10" />
+              <span className="font-mono text-lg font-bold text-primary">AgentFS</span>
+            </div>
             <p className="mt-3 text-sm text-foreground-muted max-w-sm">
               Multi-tenant, filesystem-like memory store for AI agents. 
               Postgres-first with opt-in semantic search.

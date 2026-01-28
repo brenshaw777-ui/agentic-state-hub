@@ -1,0 +1,113 @@
+import { motion } from "framer-motion";
+import { FolderTree, History, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import HeroTerminal from "./HeroTerminal";
+import ArchitectureDiagram from "./ArchitectureDiagram";
+
+const valueProofs = [
+  {
+    icon: FolderTree,
+    text: 'Deterministic paths: "/user/preferences/tone"',
+  },
+  {
+    icon: History,
+    text: "Versioned + auditable",
+  },
+  {
+    icon: Shield,
+    text: "Cost-safe indexing (opt-in + quotas)",
+  },
+];
+
+const Hero = () => {
+  return (
+    <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+      {/* Scanline effect for hero only */}
+      <div className="absolute inset-0 bg-scanlines opacity-30 pointer-events-none" />
+      
+      <div className="container mx-auto px-4 md:px-6">
+        {/* MVP Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-6"
+        >
+          <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono border border-primary/40 rounded-full text-primary bg-primary/5">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            MVP-first
+          </span>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left column - Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
+              Memory that agents can{" "}
+              <span className="text-primary">actually trust.</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-foreground-muted mb-8 max-w-xl">
+              Filesystem semantics, version history, TTL, and opt-in semantic search — Postgres-first.
+            </p>
+
+            {/* Value proofs */}
+            <div className="space-y-3 mb-8">
+              {valueProofs.map((proof, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                  className="flex items-center gap-3 text-foreground-muted"
+                >
+                  <proof.icon className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-sm font-mono">{proof.text}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTA buttons */}
+            <div className="flex flex-wrap gap-4 mb-6">
+              <Button 
+                size="lg" 
+                className="bg-primary text-primary-foreground hover:bg-primary/90 glow-primary font-semibold px-8"
+              >
+                Get started
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-border-bright hover:bg-muted hover:border-primary/50 transition-all duration-300"
+              >
+                Read docs
+              </Button>
+            </div>
+
+            {/* Trust line */}
+            <p className="text-xs text-foreground-muted/70 font-mono">
+              MVP-ready for Telegram bots. Built for infra-grade reliability.
+            </p>
+          </motion.div>
+
+          {/* Right column - Terminal */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative"
+          >
+            <HeroTerminal />
+            <ArchitectureDiagram />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

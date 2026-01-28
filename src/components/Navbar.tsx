@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import agentfsLogo from "@/assets/agentfs-logo.png";
 
 const navLinks = [
   { href: "#product", label: "Product" },
@@ -20,6 +21,7 @@ const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
+            <img src={agentfsLogo} alt="AgentFS" className="h-8 w-8" />
             <span className="font-mono text-lg font-bold text-primary">AgentFS</span>
             <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono border border-primary/30 rounded text-primary/80">
               MVP

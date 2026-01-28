@@ -20,11 +20,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <span className="font-mono text-lg font-bold text-primary">AgentFS</span>
-            <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono border border-primary/30 rounded text-primary/80">
-              MVP
-            </span>
+          <a href="#" className="flex items-center">
+            <img src={agentfsIcon} alt="AgentFS" className="h-8 w-8" />
           </a>
 
           {/* Desktop Navigation */}

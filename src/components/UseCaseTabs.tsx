@@ -89,7 +89,7 @@ const UseCaseTabs = () => {
   const activeCase = useCases.find((uc) => uc.id === activeTab)!;
 
   return (
-    <section id="use-cases" className="py-16 md:py-20 bg-background-panel/30">
+    <section id="use-cases" className="py-8 md:py-12 bg-background-panel/30">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

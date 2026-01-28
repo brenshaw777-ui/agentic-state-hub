@@ -21,7 +21,7 @@ const Tokenomics = () => {
   };
 
   return (
-    <section id="tokenomics" className="py-16 md:py-20 relative bg-background-panel/30">
+    <section id="tokenomics" className="py-8 md:py-12 relative bg-background-panel/30">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div

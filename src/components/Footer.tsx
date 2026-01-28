@@ -10,11 +10,11 @@ const XLogo = ({ className }: { className?: string }) => (
 
 const Footer = () => {
   return (
-    <footer id="docs" className="py-12 border-t border-border">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-4 gap-8">
+    <footer id="docs" className="py-8 md:py-12 border-t border-border">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2">
             <div className="flex items-center gap-2">
               <div className="p-2 rounded-lg bg-foreground/90">
                 <img src={agentfsLogo} alt="AgentFS" className="h-7 w-7" />
@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row justify-between gap-4">
+        <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-border flex flex-col md:flex-row justify-between gap-3 md:gap-4">
           <p className="text-xs text-foreground-muted/70">
             © 2024 AgentFS. All rights reserved.
           </p>

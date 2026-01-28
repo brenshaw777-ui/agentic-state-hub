@@ -89,8 +89,8 @@ const UseCaseTabs = () => {
   const activeCase = useCases.find((uc) => uc.id === activeTab)!;
 
   return (
-    <section id="use-cases" className="py-20 md:py-24 bg-background-panel/30">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="use-cases" className="py-16 md:py-20 bg-background-panel/30">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +98,7 @@ const UseCaseTabs = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             Built for bots and agent systems.
           </h2>
           <p className="text-foreground-muted">
@@ -107,12 +107,12 @@ const UseCaseTabs = () => {
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="flex flex-wrap justify-center gap-2 mb-6 md:mb-8">
           {useCases.map((uc) => (
             <button
               key={uc.id}
               onClick={() => setActiveTab(uc.id)}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 ${
                 activeTab === uc.id
                   ? "bg-primary text-primary-foreground"
                   : "bg-background-panel border border-border text-foreground-muted hover:border-border-bright hover:text-foreground"
@@ -131,7 +131,7 @@ const UseCaseTabs = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="grid lg:grid-cols-2 gap-8"
+            className="grid lg:grid-cols-2 gap-6 md:gap-8"
           >
             {/* Outcomes */}
             <div className="space-y-4">

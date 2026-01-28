@@ -29,8 +29,8 @@ const results = await fs.search('user preferences', { limit: 5 });`;
 
 const DeveloperSection = () => {
   return (
-    <section id="developers" className="py-20 md:py-24 bg-background-panel/30">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="developers" className="py-16 md:py-20 bg-background-panel/30">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const DeveloperSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             Developer-first. <span className="text-secondary">Postgres-first.</span>
           </h2>
           <p className="text-foreground-muted">
@@ -46,7 +46,7 @@ const DeveloperSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
           {/* Setup commands */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

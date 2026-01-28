@@ -18,8 +18,8 @@ const problems = [
 
 const ProblemSolution = () => {
   return (
-    <section className="py-20 md:py-24">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-16 md:py-20">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Problem statement */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,14 +28,14 @@ const ProblemSolution = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
             Agents forget. Logs are messy.{" "}
             <span className="text-destructive">Vectors aren't inspectable.</span>
           </h2>
         </motion.div>
 
         {/* Problem cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
           {problems.map((problem, index) => (
             <motion.div
               key={index}
@@ -43,10 +43,10 @@ const ProblemSolution = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 bg-background-panel border border-border rounded-lg hover:border-destructive/30 transition-colors"
+              className="p-4 md:p-6 bg-background-panel border border-border rounded-lg hover:border-destructive/30 transition-colors"
             >
-              <problem.icon className="w-8 h-8 text-destructive/70 mb-4" />
-              <p className="text-foreground font-medium">{problem.title}</p>
+              <problem.icon className="w-6 h-6 md:w-8 md:h-8 text-destructive/70 mb-3 md:mb-4" />
+              <p className="text-sm md:text-base text-foreground font-medium">{problem.title}</p>
             </motion.div>
           ))}
         </div>
@@ -57,9 +57,9 @@ const ProblemSolution = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="p-6 md:p-8 bg-primary/5 border border-primary/20 rounded-lg text-center"
+          className="p-4 md:p-6 lg:p-8 bg-primary/5 border border-primary/20 rounded-lg text-center"
         >
-          <p className="text-xl md:text-2xl font-semibold text-foreground mb-3">
+          <p className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground mb-2 md:mb-3">
             AgentFS makes memory{" "}
             <span className="text-primary">structured</span>,{" "}
             <span className="text-secondary">inspectable</span>, and{" "}

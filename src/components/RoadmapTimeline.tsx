@@ -53,7 +53,7 @@ const RoadmapTimeline = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Roadmap
           </h2>
           <p className="text-foreground-muted">
@@ -65,7 +65,7 @@ const RoadmapTimeline = () => {
         <div className="max-w-3xl mx-auto">
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-border" />
+            <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-foreground" />
 
             {milestones.map((milestone, index) => (
               <motion.div
@@ -88,18 +88,18 @@ const RoadmapTimeline = () => {
                 </div>
 
                 {/* Content */}
-                <div className={`p-3 md:p-4 bg-background-panel border rounded-lg ${
-                  milestone.status === "current" ? "border-secondary/30" : "border-border"
+                <div className={`p-3 md:p-4 bg-background border rounded-sm ${
+                  milestone.status === "current" ? "border-secondary" : "border-border"
                 }`}>
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-xs font-mono text-primary">{milestone.phase}</span>
-                    <h3 className="font-semibold">{milestone.title}</h3>
+                    <h3 className="font-semibold text-foreground">{milestone.title}</h3>
                   </div>
                   <ul className="flex flex-wrap gap-2">
                     {milestone.items.map((item, i) => (
                       <li
                         key={i}
-                        className="text-xs px-2 py-1 bg-muted rounded text-foreground-muted"
+                        className="text-xs px-2 py-1 bg-muted border border-border rounded-sm text-foreground-muted"
                       >
                         {item}
                       </li>
@@ -117,15 +117,15 @@ const RoadmapTimeline = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-8 md:mt-12 max-w-3xl mx-auto p-3 md:p-4 border border-border bg-background-panel/50 rounded-lg"
+          className="mt-8 md:mt-12 max-w-3xl mx-auto p-3 md:p-4 border border-border bg-background rounded-sm"
         >
-          <h4 className="text-sm font-semibold text-foreground-muted mb-3">
+          <h4 className="text-sm font-semibold text-foreground mb-3">
             Explicitly deferred:
           </h4>
           <ul className="grid md:grid-cols-2 gap-2">
             {deferredItems.map((item, i) => (
-              <li key={i} className="text-xs text-foreground-muted/70 flex items-start gap-2">
-                <span className="text-foreground-muted/40">—</span>
+              <li key={i} className="text-xs text-foreground-muted flex items-start gap-2">
+                <span className="text-primary">—</span>
                 {item}
               </li>
             ))}

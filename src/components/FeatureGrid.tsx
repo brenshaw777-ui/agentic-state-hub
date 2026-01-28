@@ -70,7 +70,7 @@ const FeatureGrid = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Inspectable memory for AI agents
           </h2>
           <p className="text-foreground-muted max-w-2xl mx-auto">

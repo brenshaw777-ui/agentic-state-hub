@@ -14,28 +14,24 @@ const links = [
     icon: Send,
     href: "#",
     description: "Join our community",
-    color: "hover:border-[#0088cc] hover:text-[#0088cc]",
   },
   {
     name: "Github",
     icon: Github,
     href: "#",
     description: "View the source",
-    color: "hover:border-foreground hover:text-foreground",
   },
   {
     name: "Docs",
     icon: BookOpen,
     href: "#docs",
     description: "Read the documentation",
-    color: "hover:border-secondary hover:text-secondary",
   },
   {
     name: "X",
     icon: XLogo,
     href: "#",
     description: "Follow for updates",
-    color: "hover:border-foreground hover:text-foreground",
   },
 ];
 
@@ -51,10 +47,10 @@ const LinksSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-3 py-1 text-xs font-mono border border-primary/30 rounded-full text-primary mb-4">
+          <span className="inline-block px-3 py-1 text-xs font-mono border border-foreground rounded-sm text-foreground mb-4">
             CONNECT
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Join the <span className="text-primary">Community</span>
           </h2>
           <p className="text-foreground-muted max-w-lg mx-auto">
@@ -74,16 +70,10 @@ const LinksSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className={`group relative p-4 md:p-6 rounded-xl border border-border bg-background-panel transition-all duration-300 ${link.color}`}
+              className="group relative p-4 md:p-6 rounded-sm border border-border bg-background transition-all duration-300 hover:border-foreground card-accent-bar"
             >
-              {/* Terminal corner accent */}
-              <div className="absolute top-2 left-2 w-2 h-2 border-l border-t border-primary/30 group-hover:border-current transition-colors" />
-              <div className="absolute top-2 right-2 w-2 h-2 border-r border-t border-primary/30 group-hover:border-current transition-colors" />
-              <div className="absolute bottom-2 left-2 w-2 h-2 border-l border-b border-primary/30 group-hover:border-current transition-colors" />
-              <div className="absolute bottom-2 right-2 w-2 h-2 border-r border-b border-primary/30 group-hover:border-current transition-colors" />
-
               <div className="flex flex-col items-center text-center gap-3 md:gap-4">
-                <div className="p-2 md:p-3 rounded-lg bg-muted text-foreground-muted group-hover:bg-current/10 transition-all">
+                <div className="p-2 md:p-3 rounded-sm border border-border text-foreground-muted group-hover:border-primary group-hover:text-primary transition-all">
                   <link.icon className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div>
@@ -91,7 +81,7 @@ const LinksSection = () => {
                     <span className="font-semibold text-foreground">
                       {link.name}
                     </span>
-                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
                   </div>
                   <p className="text-xs text-foreground-muted">
                     {link.description}

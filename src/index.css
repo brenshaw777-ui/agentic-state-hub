@@ -2,70 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-/* AgentFS Design System - Agentic Terminal Pixel */
+/* AgentFS Design System - Light Editorial Theme */
 
 @layer base {
   :root {
-    /* Core backgrounds - warmed up for amber theme */
-    --background: 30 20% 4%;
-    --background-panel: 30 15% 8%;
-    --background-panel-alt: 30 12% 12%;
+    /* Core backgrounds - Pure white editorial */
+    --background: 0 0% 100%;
+    --background-panel: 0 0% 100%;
+    --background-panel-alt: 0 0% 98%;
     
-    --foreground: 220 20% 93%;
-    --foreground-muted: 222 20% 67%;
+    --foreground: 0 0% 0%;
+    --foreground-muted: 0 0% 27%;
 
-    --card: 222 50% 6%;
-    --card-foreground: 220 20% 93%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 222 50% 6%;
-    --popover-foreground: 220 20% 93%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
 
-    /* Primary - Amber Gold (warm terminal phosphor) */
-    --primary: 43 100% 50%;
-    --primary-foreground: 220 50% 4%;
-    --primary-glow: 43 100% 50% / 0.3;
+    /* Primary - Red accent */
+    --primary: 4 84% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Coral Orange */
-    --secondary: 16 100% 60%;
-    --secondary-foreground: 220 50% 4%;
-    --secondary-glow: 16 100% 60% / 0.2;
+    /* Secondary - Orange accent */
+    --secondary: 24 100% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Accent - Warm Rose */
-    --accent: 350 100% 65%;
-    --accent-foreground: 220 20% 93%;
-    --accent-glow: 350 100% 65% / 0.2;
+    /* Accent - Red-Orange blend */
+    --accent: 14 100% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --muted: 224 30% 15%;
-    --muted-foreground: 222 20% 67%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --destructive: 350 85% 60%;
-    --destructive-foreground: 220 20% 93%;
+    --destructive: 4 84% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --warning: 45 100% 50%;
+    --warning: 24 100% 50%;
 
-    --border: 222 30% 18%;
-    --border-bright: 222 30% 28%;
-    --input: 222 30% 18%;
-    --ring: 43 100% 50%;
+    --border: 0 0% 90%;
+    --border-bright: 0 0% 75%;
+    --input: 0 0% 90%;
+    --ring: 4 84% 55%;
 
-    --radius: 1rem;
+    --radius: 0.25rem;
 
-    /* Sidebar (not used but keeping for compatibility) */
-    --sidebar-background: 222 50% 6%;
-    --sidebar-foreground: 220 20% 93%;
-    --sidebar-primary: 43 100% 50%;
-    --sidebar-primary-foreground: 220 50% 4%;
-    --sidebar-accent: 224 50% 9%;
-    --sidebar-accent-foreground: 220 20% 93%;
-    --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 43 100% 50%;
-  }
-
-  .dark {
-    --background: 220 50% 4%;
-    --foreground: 220 20% 93%;
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 4 84% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 4 84% 55%;
   }
 }
 
@@ -80,18 +72,19 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
   }
 
   code, pre, .font-mono {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'JetBrains Mono', monospace;
   }
 
-  /* Custom scrollbar - dark and thin */
+  /* Custom scrollbar - light theme */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -102,79 +95,80 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
+    background: hsl(var(--border-bright));
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--border-bright));
+    background: hsl(var(--foreground-muted));
   }
 
   /* Firefox scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: hsl(var(--border)) hsl(var(--background));
+    scrollbar-color: hsl(var(--border-bright)) hsl(var(--background));
   }
 }
 
 @layer components {
-  /* Pixel grid background */
+  /* Blueprint grid background */
   .bg-pixel-grid {
     background-image: 
-      linear-gradient(to right, hsl(var(--border) / 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border) / 0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
+      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 
-  /* Noise texture overlay */
-  .bg-noise {
+  /* Hero arc decoration */
+  .hero-arc {
+    position: absolute;
+    border: 1px solid hsl(var(--primary) / 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* Terminal light styling */
+  .terminal-light {
+    border: 1px solid hsl(var(--foreground));
+  }
+
+  /* Red underline accent */
+  .accent-underline {
     position: relative;
   }
-  .bg-noise::before {
+  .accent-underline::after {
     content: '';
     position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    opacity: 0.04;
-    pointer-events: none;
-    mix-blend-mode: overlay;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: hsl(var(--primary));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .accent-underline:hover::after {
+    transform: scaleX(1);
   }
 
-  /* Scanline effect for hero */
-  .bg-scanlines {
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      hsl(var(--primary) / 0.02) 2px,
-      hsl(var(--primary) / 0.02) 4px
-    );
-  }
-
-  /* Terminal glow */
-  .terminal-glow {
-    box-shadow: 
-      0 0 20px hsl(var(--primary-glow)),
-      0 0 40px hsl(var(--primary) / 0.1),
-      inset 0 1px 0 hsl(var(--primary) / 0.1);
-  }
-
-  /* Card with pixel notch */
-  .card-notched {
+  /* Card hover with bottom accent bar */
+  .card-accent-bar {
     position: relative;
-    clip-path: polygon(
-      0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px,
-      100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px)
-    );
+    overflow: hidden;
   }
-
-  /* Glow effects */
-  .glow-primary {
-    box-shadow: 0 0 20px hsl(var(--primary-glow)), 0 4px 20px hsl(var(--primary) / 0.2);
+  .card-accent-bar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: hsl(var(--primary));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
   }
-
-  .glow-secondary {
-    box-shadow: 0 0 20px hsl(var(--secondary-glow)), 0 4px 20px hsl(var(--secondary) / 0.15);
+  .card-accent-bar:hover::after {
+    transform: scaleX(1);
   }
 
   /* Cursor blink animation */
@@ -187,19 +181,25 @@
     animation: cursor-blink 1s step-end infinite;
   }
 
-  /* Pulse animation for architecture */
-  @keyframes pulse-flow {
-    0%, 100% { opacity: 0.4; transform: translateX(0); }
-    50% { opacity: 1; transform: translateX(4px); }
+  /* Step number circle */
+  .step-number {
+    @apply w-8 h-8 flex items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold;
   }
 
-  .pulse-flow {
-    animation: pulse-flow 2s ease-in-out infinite;
+  /* Badge with dot indicator */
+  .badge-dot {
+    position: relative;
+    padding-left: 1rem;
   }
-
-  /* Typing animation */
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+  .badge-dot::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: hsl(var(--primary));
   }
 }

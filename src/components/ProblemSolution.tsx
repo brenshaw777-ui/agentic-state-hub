@@ -28,9 +28,9 @@ const ProblemSolution = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
             Agents forget. Logs are messy.{" "}
-            <span className="text-destructive">Vectors aren't inspectable.</span>
+            <span className="text-primary">Vectors aren't inspectable.</span>
           </h2>
         </motion.div>
 
@@ -43,9 +43,9 @@ const ProblemSolution = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-4 md:p-6 bg-background-panel border border-border rounded-lg hover:border-destructive/30 transition-colors"
+              className="p-4 md:p-6 bg-background border border-border rounded-sm card-accent-bar transition-colors"
             >
-              <problem.icon className="w-6 h-6 md:w-8 md:h-8 text-destructive/70 mb-3 md:mb-4" />
+              <problem.icon className="w-6 h-6 md:w-8 md:h-8 text-primary mb-3 md:mb-4" strokeWidth={1.5} />
               <p className="text-sm md:text-base text-foreground font-medium">{problem.title}</p>
             </motion.div>
           ))}
@@ -57,13 +57,13 @@ const ProblemSolution = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="p-4 md:p-6 lg:p-8 bg-primary/5 border border-primary/20 rounded-lg text-center"
+          className="p-4 md:p-6 lg:p-8 bg-background border border-foreground rounded-sm text-center"
         >
           <p className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground mb-2 md:mb-3">
             AgentFS makes memory{" "}
             <span className="text-primary">structured</span>,{" "}
             <span className="text-secondary">inspectable</span>, and{" "}
-            <span className="text-accent">cost-safe</span>.
+            <span className="text-primary">cost-safe</span>.
           </p>
           <p className="text-sm text-foreground-muted font-mono">
             Filesystem semantics: predictable paths + list/glob + history + TTL.

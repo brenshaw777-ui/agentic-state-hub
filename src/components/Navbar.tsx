@@ -16,7 +16,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -24,7 +24,7 @@ const Navbar = () => {
             <img 
               src={agentfsIcon} 
               alt="AgentFS" 
-              className="h-8 w-8 transition-all duration-300 hover:drop-shadow-[0_0_12px_hsl(43,100%,50%,0.7)]" 
+              className="h-8 w-8 transition-all duration-300 hover:opacity-70" 
             />
           </a>
 
@@ -34,7 +34,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-foreground-muted hover:text-foreground transition-colors duration-200"
+                className="text-sm text-foreground-muted hover:text-foreground transition-colors duration-200 relative accent-underline"
               >
                 {link.label}
               </a>
@@ -43,8 +43,9 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 glow-primary font-medium">
-              Get started
+            <Button className="bg-foreground text-background hover:bg-foreground/90 font-medium relative overflow-hidden group">
+              <span className="relative z-10">Get started</span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
             </Button>
           </div>
 
@@ -65,7 +66,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-border bg-background-panel"
+            className="md:hidden border-t border-border bg-background"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -78,7 +79,7 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 mt-2">
+              <Button className="w-full bg-foreground text-background hover:bg-foreground/90 mt-2">
                 Get started
               </Button>
             </div>

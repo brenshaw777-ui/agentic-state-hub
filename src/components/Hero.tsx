@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FolderTree, History, Shield } from "lucide-react";
+import { FolderTree, History, Shield, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import HeroTerminal from "./HeroTerminal";
 import ArchitectureDiagram from "./ArchitectureDiagram";
@@ -22,9 +22,6 @@ const valueProofs = [
 const Hero = () => {
   return (
     <section className="relative pt-20 pb-8 md:pt-28 md:pb-12 overflow-hidden">
-      {/* Scanline effect for hero only */}
-      <div className="absolute inset-0 bg-scanlines opacity-30 pointer-events-none" />
-      
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left column - Content */}
@@ -33,9 +30,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-4 md:mb-6">
+            <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-4 md:mb-6 text-foreground">
               Developer first SDK for{" "}
-              <span className="text-primary">agent memory.</span>
+              <span className="relative">
+                agent memory.
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-primary" />
+              </span>
             </h1>
             
             <p className="text-base md:text-lg lg:text-xl text-foreground-muted mb-6 md:mb-8 max-w-xl">
@@ -62,21 +62,22 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 md:mb-6">
               <Button 
                 size="lg" 
-                className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 glow-primary font-semibold px-8"
+                className="w-full sm:w-auto bg-foreground text-background hover:bg-foreground/90 font-semibold px-8 group"
               >
                 Get started
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="w-full sm:w-auto border-border-bright hover:bg-muted hover:border-primary/50 transition-all duration-300"
+                className="w-full sm:w-auto border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
               >
                 Read docs
               </Button>
             </div>
 
             {/* Trust line */}
-            <p className="text-xs text-foreground-muted/70 font-mono">
+            <p className="text-xs text-foreground-muted font-mono">
               Ready for Telegram bots. Built for infra-grade reliability.
             </p>
           </motion.div>

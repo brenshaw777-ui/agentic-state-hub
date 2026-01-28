@@ -39,7 +39,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-base md:text-lg lg:text-xl text-foreground-muted mb-6 md:mb-8 max-w-xl">
-              Filesystem semantics, version history, TTL, and opt-in semantic search — Postgres-first.
+              Give your agents memory they can trust: structured, inspectable, and searchable on demand.
             </p>
 
             {/* Value proofs */}

@@ -22,20 +22,20 @@
     --popover: 222 50% 6%;
     --popover-foreground: 220 20% 93%;
 
-    /* Primary - Phosphor Green */
-    --primary: 150 100% 62%;
+    /* Primary - Amber Gold (warm terminal phosphor) */
+    --primary: 43 100% 50%;
     --primary-foreground: 220 50% 4%;
-    --primary-glow: 150 100% 62% / 0.3;
+    --primary-glow: 43 100% 50% / 0.3;
 
-    /* Secondary - Electric Cyan */
-    --secondary: 190 100% 50%;
+    /* Secondary - Coral Orange */
+    --secondary: 16 100% 60%;
     --secondary-foreground: 220 50% 4%;
-    --secondary-glow: 190 100% 50% / 0.2;
+    --secondary-glow: 16 100% 60% / 0.2;
 
-    /* Accent - Violet */
-    --accent: 260 100% 68%;
+    /* Accent - Warm Rose */
+    --accent: 350 100% 65%;
     --accent-foreground: 220 20% 93%;
-    --accent-glow: 260 100% 68% / 0.2;
+    --accent-glow: 350 100% 65% / 0.2;
 
     --muted: 224 30% 15%;
     --muted-foreground: 222 20% 67%;
@@ -48,19 +48,19 @@
     --border: 222 30% 18%;
     --border-bright: 222 30% 28%;
     --input: 222 30% 18%;
-    --ring: 150 100% 62%;
+    --ring: 43 100% 50%;
 
     --radius: 1rem;
 
     /* Sidebar (not used but keeping for compatibility) */
     --sidebar-background: 222 50% 6%;
     --sidebar-foreground: 220 20% 93%;
-    --sidebar-primary: 150 100% 62%;
+    --sidebar-primary: 43 100% 50%;
     --sidebar-primary-foreground: 220 50% 4%;
     --sidebar-accent: 224 50% 9%;
     --sidebar-accent-foreground: 220 20% 93%;
     --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 150 100% 62%;
+    --sidebar-ring: 43 100% 50%;
   }
 
   .dark {

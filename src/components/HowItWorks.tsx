@@ -39,8 +39,8 @@ const HowItWorks = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-            How AgentFS works <span className="text-foreground-muted text-lg sm:text-xl md:text-2xl">(in 60 seconds)</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            How AgentFS works <span className="text-foreground-muted text-xl sm:text-2xl md:text-3xl">(in 60 seconds)</span>
           </h2>
         </motion.div>
 

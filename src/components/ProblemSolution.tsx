@@ -28,7 +28,7 @@ const ProblemSolution = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Agents forget. Logs are messy.{" "}
             <span className="text-destructive">Vectors aren't inspectable.</span>
           </h2>

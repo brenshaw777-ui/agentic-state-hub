@@ -93,8 +93,8 @@ const DeveloperSection = () => {
                 </div>
                 <span className="text-xs font-mono text-foreground-muted ml-2">index.ts</span>
               </div>
-              <pre className="p-4 overflow-x-auto">
-                <code className="text-sm font-mono text-foreground-muted whitespace-pre">
+              <pre className="p-4 overflow-x-auto max-w-full">
+                <code className="text-xs sm:text-sm font-mono text-foreground-muted whitespace-pre break-all sm:break-normal">
                   {sdkExample}
                 </code>
               </pre>

@@ -26,19 +26,6 @@ const Hero = () => {
       <div className="absolute inset-0 bg-scanlines opacity-30 pointer-events-none" />
       
       <div className="container mx-auto px-4 sm:px-6">
-        {/* MVP Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-6"
-        >
-          <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono border border-primary/40 rounded-full text-primary bg-primary/5">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            MVP-first
-          </span>
-        </motion.div>
-
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left column - Content */}
           <motion.div
@@ -46,7 +33,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-4 md:mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-4 md:mb-6">
               Memory that agents can{" "}
               <span className="text-primary">actually trust.</span>
             </h1>
@@ -90,7 +77,7 @@ const Hero = () => {
 
             {/* Trust line */}
             <p className="text-xs text-foreground-muted/70 font-mono">
-              MVP-ready for Telegram bots. Built for infra-grade reliability.
+              Ready for Telegram bots. Built for infra-grade reliability.
             </p>
           </motion.div>
 

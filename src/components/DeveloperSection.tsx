@@ -37,7 +37,7 @@ const results = await fs.search(
 
 const DeveloperSection = () => {
   return (
-    <section id="developers" className="py-16 md:py-20 bg-background-panel/30">
+    <section id="developers" className="py-8 md:py-12 bg-background-panel/30">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

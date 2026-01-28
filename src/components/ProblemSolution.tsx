@@ -18,7 +18,7 @@ const problems = [
 
 const ProblemSolution = () => {
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-8 md:py-12">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Problem statement */}
         <motion.div

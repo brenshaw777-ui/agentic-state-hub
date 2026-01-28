@@ -41,7 +41,7 @@ const links = [
 
 const LinksSection = () => {
   return (
-    <section id="links" className="py-16 md:py-20 relative">
+    <section id="links" className="py-8 md:py-12 relative">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div

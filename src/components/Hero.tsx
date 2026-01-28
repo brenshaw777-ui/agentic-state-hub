@@ -21,7 +21,7 @@ const valueProofs = [
 
 const Hero = () => {
   return (
-    <section className="relative pt-20 pb-12 md:pt-28 md:pb-20 overflow-hidden">
+    <section className="relative pt-20 pb-8 md:pt-28 md:pb-12 overflow-hidden">
       {/* Scanline effect for hero only */}
       <div className="absolute inset-0 bg-scanlines opacity-30 pointer-events-none" />
       

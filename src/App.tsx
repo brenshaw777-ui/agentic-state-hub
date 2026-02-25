@@ -7,6 +7,7 @@ import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import MissionControlLayout from "@/components/dashboard/MissionControlLayout";
 import KnowledgeLayout from "@/components/dashboard/KnowledgeLayout";
 import OperationsLayout from "@/components/dashboard/OperationsLayout";
+import SecurityLayout from "@/components/dashboard/SecurityLayout";
 import MissionControl from "@/pages/MissionControl";
 import MissionControlOverview from "@/pages/MissionControlOverview";
 import MissionControlTimeline from "@/pages/MissionControlTimeline";
@@ -67,8 +68,10 @@ const App = () => (
               <Route path="runtime" element={<OperationsRuntime />} />
             </Route>
             <Route path="/integrations" element={<Integrations />} />
-            <Route path="/security" element={<Security />} />
-            <Route path="/security/vault" element={<SecurityVault />} />
+            <Route path="/security" element={<SecurityLayout />}>
+              <Route index element={<Security />} />
+              <Route path="vault" element={<SecurityVault />} />
+            </Route>
             <Route path="/admin" element={<Admin />} />
             <Route path="/settings" element={<SettingsLayout />}>
               <Route index element={<SettingsProfile />} />

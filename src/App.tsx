@@ -24,7 +24,12 @@ import Integrations from "@/pages/Integrations";
 import Security from "@/pages/Security";
 import SecurityVault from "@/pages/SecurityVault";
 import Admin from "@/pages/Admin";
-import Settings from "@/pages/Settings";
+import SettingsLayout from "@/components/dashboard/SettingsLayout";
+import SettingsProfile from "@/pages/SettingsProfile";
+import SettingsAPI from "@/pages/SettingsAPI";
+import SettingsBilling from "@/pages/SettingsBilling";
+import SettingsPreferences from "@/pages/SettingsPreferences";
+import SettingsSafety from "@/pages/SettingsSafety";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -59,7 +64,13 @@ const App = () => (
             <Route path="/security" element={<Security />} />
             <Route path="/security/vault" element={<SecurityVault />} />
             <Route path="/admin" element={<Admin />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/settings" element={<SettingsLayout />}>
+              <Route index element={<SettingsProfile />} />
+              <Route path="api" element={<SettingsAPI />} />
+              <Route path="billing" element={<SettingsBilling />} />
+              <Route path="preferences" element={<SettingsPreferences />} />
+              <Route path="safety" element={<SettingsSafety />} />
+            </Route>
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

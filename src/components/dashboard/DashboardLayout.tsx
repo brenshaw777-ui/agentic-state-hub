@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import AppSidebar from "./AppSidebar";
 import StatusChip from "./StatusChip";
 
@@ -22,6 +22,10 @@ const routeTitles: Record<string, { title: string; subtitle?: string }> = {
   "/security/vault": { title: "Vault", subtitle: "Secrets management" },
   "/admin": { title: "Admin", subtitle: "System administration" },
   "/settings": { title: "Settings", subtitle: "Configuration" },
+  "/settings/api": { title: "Settings", subtitle: "API Access & Keys" },
+  "/settings/billing": { title: "Settings", subtitle: "Billing & Plan" },
+  "/settings/preferences": { title: "Settings", subtitle: "Preferences" },
+  "/settings/safety": { title: "Settings", subtitle: "Safety Defaults" },
 };
 
 const DashboardLayout = () => {
@@ -51,11 +55,7 @@ const DashboardLayout = () => {
           {/* Top Bar */}
           <header className="sticky top-0 z-40 flex h-12 items-center justify-between border-b border-foreground bg-background px-4">
             <div className="flex items-center gap-3">
-              <SidebarTrigger />
-              <div className="h-4 w-px bg-border" />
-              <div>
-                <h1 className="text-sm font-bold text-foreground">{pageInfo.title}</h1>
-              </div>
+              <h1 className="text-sm font-bold text-foreground">{pageInfo.title}</h1>
               {pageInfo.subtitle && (
                 <>
                   <span className="text-xs text-foreground-muted hidden sm:inline">—</span>

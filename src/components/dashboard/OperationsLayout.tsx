@@ -1,4 +1,5 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import AnimatedOutlet from "./AnimatedOutlet";
 
 const tabs = [
   { label: "Hub", value: "/operations" },
@@ -12,7 +13,6 @@ const OperationsLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Match active tab — exact match or startsWith for nested routes like /operations/projects/:id
   const activeTab = tabs.find(
     (t) => location.pathname === t.value || (t.value !== "/operations" && location.pathname.startsWith(t.value + "/"))
   )?.value ?? "/operations";
@@ -36,7 +36,7 @@ const OperationsLayout = () => {
           ))}
         </nav>
       </div>
-      <Outlet />
+      <AnimatedOutlet><Outlet /></AnimatedOutlet>
     </div>
   );
 };

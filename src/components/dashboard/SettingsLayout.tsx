@@ -1,4 +1,5 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import AnimatedOutlet from "./AnimatedOutlet";
 
 const tabs = [
   { label: "Profile & Identity", value: "/settings" },
@@ -32,7 +33,7 @@ const SettingsLayout = () => {
         </nav>
       </div>
       <div className="max-w-4xl">
-        <Outlet />
+        <AnimatedOutlet><Outlet /></AnimatedOutlet>
       </div>
     </div>
   );

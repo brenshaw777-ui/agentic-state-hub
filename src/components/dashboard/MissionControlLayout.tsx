@@ -1,5 +1,6 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import AnimatedOutlet from "./AnimatedOutlet";
 
 const tabs = [
   { label: "Cockpit", value: "/mission-control" },
@@ -28,7 +29,7 @@ const MissionControlLayout = () => {
           ))}
         </TabsList>
       </Tabs>
-      <Outlet />
+      <AnimatedOutlet><Outlet /></AnimatedOutlet>
     </div>
   );
 };

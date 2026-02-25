@@ -51,7 +51,7 @@ const DashboardLayout = () => {
     <SidebarProvider>
       <div className="flex min-h-screen w-full">
         <AppSidebar />
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col border-l border-foreground">
           {/* Top Bar */}
           <header className="sticky top-0 z-40 flex h-12 items-center justify-between border-b border-foreground bg-background px-4">
             <div className="flex items-center gap-3">

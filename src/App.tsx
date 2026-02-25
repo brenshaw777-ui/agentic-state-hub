@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
+import MissionControlLayout from "@/components/dashboard/MissionControlLayout";
 import MissionControl from "@/pages/MissionControl";
 import MissionControlOverview from "@/pages/MissionControlOverview";
 import MissionControlTimeline from "@/pages/MissionControlTimeline";
@@ -37,9 +38,11 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Navigate to="/mission-control" replace />} />
           <Route element={<DashboardLayout />}>
-            <Route path="/mission-control" element={<MissionControl />} />
-            <Route path="/mission-control/overview" element={<MissionControlOverview />} />
-            <Route path="/mission-control/timeline" element={<MissionControlTimeline />} />
+            <Route path="/mission-control" element={<MissionControlLayout />}>
+              <Route index element={<MissionControl />} />
+              <Route path="overview" element={<MissionControlOverview />} />
+              <Route path="timeline" element={<MissionControlTimeline />} />
+            </Route>
             <Route path="/agents" element={<Agents />} />
             <Route path="/agents/:id" element={<AgentDetail />} />
             <Route path="/knowledge" element={<Knowledge />} />

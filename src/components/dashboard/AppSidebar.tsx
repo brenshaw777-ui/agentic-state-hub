@@ -37,13 +37,10 @@ const AppSidebar = () => {
   };
 
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="none">
       <SidebarHeader className="border-b border-border px-3 py-3">
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center">
           <img src={agentfsIcon} alt="AgentOS" className="h-6 w-6" />
-          <span className="text-sm font-bold tracking-tight text-foreground group-data-[collapsible=icon]:hidden">
-            AgentOS
-          </span>
         </div>
       </SidebarHeader>
 

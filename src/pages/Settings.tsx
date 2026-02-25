@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import ModulePanel from "@/components/dashboard/ModulePanel";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,37 +12,42 @@ const sections = [
 ];
 
 const Settings = () => {
+  const [activeSection, setActiveSection] = useState("profile");
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const scrollTo = (id: string) => {
+    setActiveSection(id);
     sectionRefs.current[id]?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <div className="flex gap-6">
-      {/* Sticky Section Index */}
-      <div className="hidden lg:block w-48 shrink-0">
-        <div className="sticky top-16 space-y-1">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Sections</h3>
+    <div className="space-y-6">
+      {/* Top Section Nav */}
+      <div className="border-b border-border">
+        <nav className="flex gap-0 overflow-x-auto">
           {sections.map((s) => (
             <button
               key={s.id}
               onClick={() => scrollTo(s.id)}
-              className="block w-full text-left text-xs py-1.5 px-2 text-foreground-muted hover:text-foreground hover:bg-muted/30 transition-colors"
+              className={`whitespace-nowrap px-4 py-2 text-xs font-medium uppercase tracking-wider border-b-2 transition-colors ${
+                activeSection === s.id
+                  ? "border-primary text-foreground"
+                  : "border-transparent text-foreground-muted hover:text-foreground hover:border-border"
+              }`}
             >
               {s.label}
             </button>
           ))}
-        </div>
+        </nav>
       </div>
 
       {/* Settings Content */}
-      <div className="flex-1 space-y-6 max-w-3xl">
+      <div className="space-y-6 max-w-4xl">
         {/* Profile */}
         <div ref={(el) => { sectionRefs.current["profile"] = el; }}>
           <ModulePanel title="Profile & Identity">
             <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-xs font-medium text-foreground-muted mb-1 block">Display Name</label>
                   <Input defaultValue="Admin User" className="text-xs h-8 border-foreground rounded-none" />

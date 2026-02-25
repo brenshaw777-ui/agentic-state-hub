@@ -15,6 +15,7 @@ const navItems = [
   { title: "Agents", url: "/agents", icon: Bot },
   { title: "Knowledge", url: "/knowledge", icon: Brain },
   { title: "Ops", url: "/operations", icon: Cog },
+  { title: "Integrate", url: "/integrations", icon: Plug },
   { title: "Security", url: "/security", icon: Shield },
   { title: "Settings", url: "/settings", icon: Settings },
 ];

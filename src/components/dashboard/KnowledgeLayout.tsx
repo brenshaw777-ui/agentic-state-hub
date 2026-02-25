@@ -1,4 +1,5 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import AnimatedOutlet from "./AnimatedOutlet";
 
 const tabs = [
   { label: "Hub", value: "/knowledge" },
@@ -30,7 +31,7 @@ const KnowledgeLayout = () => {
           ))}
         </nav>
       </div>
-      <Outlet />
+      <AnimatedOutlet><Outlet /></AnimatedOutlet>
     </div>
   );
 };

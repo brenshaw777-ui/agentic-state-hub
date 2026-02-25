@@ -56,15 +56,15 @@ const AppSidebar = () => {
                 key={item.url}
                 onClick={() => navigate(item.url)}
                 className={cn(
-                  "flex flex-col items-center justify-center gap-1 rounded-sm border px-2 py-3 transition-colors",
-                  "group-data-[collapsible=icon]:px-0 group-data-[collapsible=icon]:py-2",
+                  "flex flex-col items-center justify-center gap-0.5 aspect-square w-14 rounded-sm border transition-colors",
+                  "group-data-[collapsible=icon]:w-10",
                   active
                     ? "border-primary bg-muted text-foreground"
                     : "border-transparent text-foreground-muted hover:border-border hover:bg-muted/50 hover:text-foreground"
                 )}
               >
-                <item.icon className="h-5 w-5 shrink-0" />
-                <span className="text-[10px] font-medium uppercase tracking-wider leading-tight group-data-[collapsible=icon]:hidden">
+                <item.icon className="h-4 w-4 shrink-0" />
+                <span className="text-[8px] font-medium uppercase tracking-wider leading-tight group-data-[collapsible=icon]:hidden">
                   {item.title}
                 </span>
               </button>

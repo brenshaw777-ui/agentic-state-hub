@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
 import MissionControlLayout from "@/components/dashboard/MissionControlLayout";
+import KnowledgeLayout from "@/components/dashboard/KnowledgeLayout";
+import OperationsLayout from "@/components/dashboard/OperationsLayout";
 import MissionControl from "@/pages/MissionControl";
 import MissionControlOverview from "@/pages/MissionControlOverview";
 import MissionControlTimeline from "@/pages/MissionControlTimeline";
@@ -50,16 +52,20 @@ const App = () => (
             </Route>
             <Route path="/agents" element={<Agents />} />
             <Route path="/agents/:id" element={<AgentDetail />} />
-            <Route path="/knowledge" element={<Knowledge />} />
-            <Route path="/knowledge/graph" element={<KnowledgeGraph />} />
-            <Route path="/knowledge/memories" element={<KnowledgeMemories />} />
-            <Route path="/knowledge/docs" element={<KnowledgeDocs />} />
-            <Route path="/operations" element={<Operations />} />
-            <Route path="/operations/tasks" element={<OperationsTasks />} />
-            <Route path="/operations/projects" element={<OperationsProjects />} />
-            <Route path="/operations/projects/:id" element={<ProjectDetail />} />
-            <Route path="/operations/mesh" element={<OperationsMesh />} />
-            <Route path="/operations/runtime" element={<OperationsRuntime />} />
+            <Route path="/knowledge" element={<KnowledgeLayout />}>
+              <Route index element={<Knowledge />} />
+              <Route path="graph" element={<KnowledgeGraph />} />
+              <Route path="memories" element={<KnowledgeMemories />} />
+              <Route path="docs" element={<KnowledgeDocs />} />
+            </Route>
+            <Route path="/operations" element={<OperationsLayout />}>
+              <Route index element={<Operations />} />
+              <Route path="tasks" element={<OperationsTasks />} />
+              <Route path="projects" element={<OperationsProjects />} />
+              <Route path="projects/:id" element={<ProjectDetail />} />
+              <Route path="mesh" element={<OperationsMesh />} />
+              <Route path="runtime" element={<OperationsRuntime />} />
+            </Route>
             <Route path="/integrations" element={<Integrations />} />
             <Route path="/security" element={<Security />} />
             <Route path="/security/vault" element={<SecurityVault />} />

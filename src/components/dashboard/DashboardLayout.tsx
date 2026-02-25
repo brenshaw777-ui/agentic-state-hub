@@ -49,15 +49,15 @@ const DashboardLayout = () => {
 
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen w-full overflow-x-hidden">
+      <div className="flex h-screen w-full overflow-hidden">
         {/* Desktop sidebar — hidden on mobile/tablet */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex h-full">
           <AppSidebar />
         </div>
 
-        <div className="flex-1 flex flex-col min-w-0 lg:border-l lg:border-foreground">
+        <div className="flex-1 flex flex-col min-w-0 h-full lg:border-l lg:border-foreground">
           {/* Top Bar */}
-          <header className="sticky top-0 z-40 flex h-12 items-center justify-between border-b border-foreground bg-background px-3 lg:px-4">
+          <header className="shrink-0 z-40 flex h-12 items-center justify-between border-b border-foreground bg-background px-3 lg:px-4">
             <div className="flex items-center gap-2 min-w-0">
               {/* Mobile logo */}
               <img src={agentfsIcon} alt="AgentOS" className="h-5 w-5 lg:hidden shrink-0" />
@@ -75,7 +75,7 @@ const DashboardLayout = () => {
           </header>
 
           {/* Content */}
-          <main className="flex-1 overflow-x-hidden overflow-y-auto">
+          <main className="flex-1 overflow-x-hidden overflow-y-auto min-h-0">
             <div className="mx-auto max-w-[1660px] p-3 lg:p-6 pb-20 lg:pb-6">
               <Outlet />
             </div>

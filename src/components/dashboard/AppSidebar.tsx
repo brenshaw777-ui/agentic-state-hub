@@ -47,39 +47,41 @@ const AppSidebar = () => {
         </div>
       </SidebarHeader>
 
-      <SidebarContent className="px-2 py-3">
-        <nav className="flex flex-col gap-1.5">
-          {navItems.map((item) => {
+      <SidebarContent className="px-1.5 py-2">
+        <nav className="flex flex-col">
+          {navItems.map((item, i) => {
             const active = isActive(item.url);
             return (
-              <button
-                key={item.url}
-                onClick={() => navigate(item.url)}
-                className={cn(
-                  "flex flex-col items-center justify-center gap-0.5 aspect-square w-14 rounded-sm border transition-colors",
-                  "group-data-[collapsible=icon]:w-10",
-                  active
-                    ? "border-primary bg-muted text-foreground"
-                    : "border-transparent text-foreground-muted hover:border-border hover:bg-muted/50 hover:text-foreground"
-                )}
-              >
-                <item.icon className="h-4 w-4 shrink-0" />
-                <span className="text-[8px] font-medium uppercase tracking-wider leading-tight group-data-[collapsible=icon]:hidden">
-                  {item.title}
-                </span>
-              </button>
+              <div key={item.url}>
+                {i > 0 && <div className="mx-2 border-t border-border" />}
+                <button
+                  onClick={() => navigate(item.url)}
+                  className={cn(
+                    "flex flex-col items-center justify-center gap-0.5 w-full aspect-square rounded-sm border transition-colors",
+                    "group-data-[collapsible=icon]:aspect-square",
+                    active
+                      ? "border-primary bg-muted text-foreground"
+                      : "border-transparent text-foreground-muted hover:border-border hover:bg-muted/50 hover:text-foreground"
+                  )}
+                >
+                  <item.icon className="h-4 w-4 shrink-0" />
+                  <span className="text-[7px] font-medium uppercase tracking-wider leading-tight group-data-[collapsible=icon]:hidden">
+                    {item.title}
+                  </span>
+                </button>
+              </div>
             );
           })}
         </nav>
       </SidebarContent>
 
-      <SidebarFooter className="border-t border-border px-2 py-2">
+      <SidebarFooter className="border-t border-border px-1.5 py-2">
         <button
           onClick={() => navigate("/")}
-          className="flex flex-col items-center justify-center gap-1 rounded-sm border border-transparent px-2 py-3 text-foreground-muted transition-colors hover:border-border hover:bg-muted/50 hover:text-primary group-data-[collapsible=icon]:px-0 group-data-[collapsible=icon]:py-2"
+          className="flex flex-col items-center justify-center gap-0.5 w-full aspect-square rounded-sm border border-transparent text-foreground-muted transition-colors hover:border-border hover:bg-muted/50 hover:text-primary group-data-[collapsible=icon]:aspect-square"
         >
-          <LogOut className="h-5 w-5 shrink-0" />
-          <span className="text-[10px] font-medium uppercase tracking-wider leading-tight group-data-[collapsible=icon]:hidden">
+          <LogOut className="h-4 w-4 shrink-0" />
+          <span className="text-[7px] font-medium uppercase tracking-wider leading-tight group-data-[collapsible=icon]:hidden">
             Logout
           </span>
         </button>
